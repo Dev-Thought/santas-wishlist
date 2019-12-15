@@ -3,6 +3,8 @@
  * This is only a minimal backend to get started.
  **/
 
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
+
 import { NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app/app.module';
