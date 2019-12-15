@@ -4,5 +4,5 @@
     "types": ["node", "jest"],
     "emitDecoratorMetadata": true
   },
-  "include": ["**/*.ts"]
+  "include": ["**/*.ts", "../../libs/api-interfaces/src/lib/wish.model.ts"]
 }

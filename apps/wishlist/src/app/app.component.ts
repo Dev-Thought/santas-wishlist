@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Message } from '@wishlist/api-interfaces';
+import { WishlistService } from './wishlist.service';
 
 @Component({
   selector: 'wishlist-root',
@@ -8,6 +9,11 @@ import { Message } from '@wishlist/api-interfaces';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  wishList$ = this.wishlistService.getWishlist();
+
+  constructor(private wishlistService: WishlistService) {}
+
+  sendWish(wish: string) {
+    this.wishlistService.addToList(wish).subscribe();
+  }
 }

@@ -1,6 +1,6 @@
 import { Controller, Get, Post, Body } from '@nestjs/common';
 import { WishlistService } from './wishlist.service';
-import { Wish } from './wish.model';
+import { Wish } from '@wishlist/api-interfaces';
 
 @Controller('wishlist')
 export class WishlistController {

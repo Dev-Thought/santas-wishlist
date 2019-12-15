@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
-import { Wish } from './wish.model';
 import { InjectRepository, Repository } from '@nestjs/azure-database';
 import { WishEntity } from './wish.entity';
+import { Wish } from '@wishlist/api-interfaces';
 
 @Injectable()
 export class WishlistService {

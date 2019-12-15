@@ -5,4 +5,15 @@
     src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png"
   />
 </div>
-<div>Message: {{ hello$ | async | json }}</div>
+<mat-list>
+  <mat-list-item *ngFor="let item of wishList$ | async">{{
+    item.wish
+  }}</mat-list-item>
+</mat-list>
+
+<form (ngSubmit)="sendWish(myWish.value)">
+  <mat-form-field>
+    <input #myWish matInput placeholder="My wish" />
+  </mat-form-field>
+  <button mat-raised-button>Send wish</button>
+</form>
