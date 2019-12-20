@@ -4,7 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatListModule, MatInputModule, MatButtonModule } from '@angular/material';
+import {
+  MatListModule,
+  MatInputModule,
+  MatButtonModule,
+  MatCardModule
+} from '@angular/material';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
@@ -14,7 +19,10 @@ import { FormsModule } from '@angular/forms';
     HttpClientModule,
     BrowserAnimationsModule,
     MatListModule,
-    MatInputModule, FormsModule, MatButtonModule
+    MatInputModule,
+    FormsModule,
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

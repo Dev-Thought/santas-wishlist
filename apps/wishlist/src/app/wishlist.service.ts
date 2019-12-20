@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Wish } from '@wishlist/api-interfaces';
-import { interval, timer } from 'rxjs';
+import { timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+
+const UPDATE_INTERVAL_IN_MS = 5000 * 100;
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class WishlistService {
   constructor(private httpClient: HttpClient) {}
 
   getWishlist() {
-    return timer(0, 5000).pipe(
+    return timer(0, UPDATE_INTERVAL_IN_MS).pipe(
       switchMap(() => this.httpClient.get<Wish[]>('/api/wishlist'))
     );
   }

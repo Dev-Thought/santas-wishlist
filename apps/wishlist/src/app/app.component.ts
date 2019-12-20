@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@wishlist/api-interfaces';
 import { WishlistService } from './wishlist.service';
 
 @Component({
