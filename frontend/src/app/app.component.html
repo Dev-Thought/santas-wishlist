@@ -1,0 +1,32 @@
+<mat-card>
+  <ng-container *ngIf="wishList$ | async as items">
+    <mat-card-header> Wishes count: {{ items.length }} </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let item of items"
+          >{{ item.wish }} from {{ item.name }}</mat-list-item
+        >
+      </mat-list>
+    </mat-card-content>
+    <mat-card-footer>
+      <mat-divider></mat-divider>
+      <form (ngSubmit)="sendWish(myWish.value, myWishName.value)">
+        <mat-form-field>
+          <input #myWish matInput placeholder="My wish" />
+        </mat-form-field>
+        <mat-form-field>
+          <input #myWishName matInput placeholder="Your name" />
+        </mat-form-field>
+        <button
+          type="submit"
+          [disabled]="!myWish.value && myWishName.value"
+          color="warn"
+          mat-raised-button
+        >
+          Send wish
+        </button>
+      </form>
+    </mat-card-footer>
+  </ng-container>
+</mat-card>

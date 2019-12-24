@@ -1,0 +1,17 @@
+{
+  "hosting": [
+    {
+      "app": {
+        "project": "frontend",
+        "target": "build",
+        "configuration": "production",
+        "path": "dist/frontend"
+      },
+      "azureHosting": {
+        "subscription": "90a008fc-abaf-46af-bb00-28d66e75c465",
+        "resourceGroupName": "santaswishlist2019",
+        "account": "santaswishlist2019"
+      }
+    }
+  ]
+}
